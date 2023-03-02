@@ -1,4 +1,5 @@
 //Ji Sison
+//I adapted the code from https://www.geeksforgeeks.org/queue-interface-java/
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -16,7 +17,9 @@ public class MainQueue {
     public void enqueue(int x) {
         if (mainQueue.size() < maxSize) {
             mainQueue.add(x);
+            System.out.println(x + " enqueued to main queue");
         } else {
+            System.out.println(x + " enqueued to waiting queue");
             waitingQueue.enqueue(x);
         }
     }
@@ -31,9 +34,9 @@ public class MainQueue {
                 if (waitingQueue.isEmpty()) {
                     break;
                 }
-                int y = waitingQueue.dequeue(); //front element in main queue
+                int y = waitingQueue.dequeue(); //front element in waiting queue
                 mainQueue.add(y);
-                System.out.println( y + " transferred " +"from WaitingQueue to MainQueue");
+                System.out.println( y + " has been transferred " +"from the waiting queue to the main queue.");
             }
         }
         return x;
