@@ -1,3 +1,4 @@
+//Ji Sison
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -10,8 +11,8 @@ public class WaitingQueue {
     }
 
     public void enqueue(int x) {
+        System.out.println("Estimated waiting time: " + waitingQueue.size() + " elements"); //means there are already n elements in the WaitingQueue
         waitingQueue.add(x);
-        System.out.println("Estimated waiting time: " + waitingQueue.size() + " elements");
     }
 
     public int dequeue() {

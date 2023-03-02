@@ -1,3 +1,4 @@
+//Ji Sison
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -23,8 +24,9 @@ public class MainQueue {
     public int dequeue() {
         int x = mainQueue.remove(); //front element in main queue
         System.out.println(x + " has been removed from the main queue.");
+        
+        //transfer elements from WaitingQueue to MainQueue
         if (!waitingQueue.isEmpty()) {
-
             for (int i = 0; i < maxSize - mainQueue.size(); i++) {
                 if (waitingQueue.isEmpty()) {
                     break;
